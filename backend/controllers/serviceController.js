@@ -1,24 +1,26 @@
 const {Service: ServiceModel} = require("../models/Service");
+const mongoose = require("mongoose")
 
 const serviceController = {
     
-    create: async(req,res) => {
-        try {
-            const service = {
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                image: req.body.image,
-            }
-
-            const response = await ServiceModel.create(service);
-
-            res.status(201).json({response, msg: "Serviço enviado com sucesso!"})
-
-        } catch (error) {
-            console.log(error)
+    create: async (req, res) => {
+    try {
+        const service = {
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            image: req.body.image,
+            _id: new mongoose.Types.ObjectId() // Correção aqui
         }
-    },
+
+        const response = await ServiceModel.create(service); // Use create em vez de save
+
+        res.status(201).json({ _id: response._id, msg: "Serviço enviado com sucesso!" });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Ocorreu um erro ao criar o serviço." });
+    }
+},
     getAll: async(req, res) => {
         try {
             const services = await ServiceModel.find()

@@ -19,6 +19,9 @@ const serviceSchema = new Schema({
         type: String,
         required: true
     },
+    _id: {
+        type: mongoose.Schema.ObjectId
+    }
 }, 
 {timestamps: true}// controle de data de criação e atualização
 );

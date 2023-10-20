@@ -2,7 +2,7 @@ POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-    "name": "algum serviço",
+    "name": "servico a",
     "description": "alguma descrição",
     "price": 1444,
     "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
@@ -26,8 +26,71 @@ PUT http://localhost:3000/api/services/6531489881d05c83ea3eee17
 Content-Type: application/json
 
 {
-    "name": "ATUALIZADP",
+    "name": "ATUALIZADO",
     "description": "alguma descrição",
     "price": 2444,
     "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
+}
+
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento 4",
+    "author": "Bruce",
+    "description": "Uma festa",
+    "budget": 23350,
+    "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png",
+    "services": [
+        {
+            "name": "servico a",
+            "description": "alguma descrição",
+            "price": 1,
+            "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
+        },
+        {
+            "name": "servico 12",
+            "description": "alguma descrição",
+            "price": 1,
+            "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
+        }
+    ]
+}
+
+###
+
+GET http://localhost:3000/api/parties
+
+###
+
+GET http://localhost:3000/api/parties/6532c9ff9fb5e32ac590b81b
+
+###
+DELETE http://localhost:3000/api/parties/6532c9189fb5e32ac590b819
+
+###
+PUT http://localhost:3000/api/parties/6532c9ff9fb5e32ac590b81b
+Content-Type: application/json
+
+{
+    "title": "Meu evento 4",
+    "author": "Bruce",
+    "description": "Uma festa",
+    "budget": 24350,
+    "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png",
+    "services": [
+        {
+            "name": "servico a",
+            "description": "alguma descrição",
+            "price": 1,
+            "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
+        },
+        {
+            "name": "servico 12",
+            "description": "alguma descrição",
+            "price": 1,
+            "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
+        }
+    ]
 }
