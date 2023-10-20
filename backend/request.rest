@@ -14,8 +14,20 @@ GET http://localhost:3000/api/services
 
 ###
 
-GET http://localhost:3000/api/services/6531487581d05c83ea3eee15
+GET http://localhost:3000/api/services/6531489881d05c83ea3eee17
 
 ###
 
-DELETE http://localhost:3000/api/services/6531487581d05c83ea3eee15
+DELETE http://localhost:3000/api/services/6531489881d05c83ea3eee17
+
+###
+
+PUT http://localhost:3000/api/services/6531489881d05c83ea3eee17
+Content-Type: application/json
+
+{
+    "name": "ATUALIZADP",
+    "description": "alguma descrição",
+    "price": 2444,
+    "image": "https://assets.mongodb-cdn.com/mms/static/dist/images/afe039795fb72d1ba05150590a017da1.png"
+}
